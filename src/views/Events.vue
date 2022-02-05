@@ -194,7 +194,9 @@ export default {
                     console.log(response);
                 });
 
-            this.loadEvents();
+            setTimeout(() => {
+                this.loadEvents();
+            }, 2000);
         },
     },
 };

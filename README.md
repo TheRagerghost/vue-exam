@@ -1,24 +1,14 @@
 # vue-exam
 
-## Project setup
-```
-npm install
-```
+[Сайт на хостинге](https://vishnyakov-ilonus.netlify.app).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Реализовано
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Статический (Да, но все уже динамически подгружается)
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Динамический контент:
+- вывод элементов списка
+- карточки событий имеют разные обложки, в зависимости от типа события
+- левый виджет (находится в шапке)
+- форма строится НЕ по запросу, но сам запрос есть
+- Текст страниц берется из API
