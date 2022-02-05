@@ -1,18 +1,42 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+    <v-container>
+        <v-layout column>
+            <v-flex>
+                <h2 class="pageTitle">Главная</h2>
+                <v-img src="page.image"></v-img>
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import axios from 'axios';
 export default {
-  name: "Home",
-  components: {
-    HelloWorld,
-  },
+    name: 'Home',
+    components: {},
+    data() {
+        return {
+            page: null,
+            apiPage: 'https://demo-api.vsdev.space/api/elonus/home_page',
+        };
+    },
+    beforeMount() {
+        this.loadPage();
+    },
+    methods: {
+        loadPage() {
+            axios
+                .get(this.apiPage)
+                .then((response) => {
+                    this.page = response.data;
+                })
+                .catch((error) => {
+                    console.log('-----error-------', error);
+                });
+        },
+    },
 };
 </script>
+
+<style scoped>
+</style>
