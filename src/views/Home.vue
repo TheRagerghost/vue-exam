@@ -3,7 +3,9 @@
         <v-layout column>
             <v-flex>
                 <h2 class="pageTitle">Главная</h2>
-                <v-img src="page.image"></v-img>
+                <v-img :src="page.image" max-height="200px"></v-img>
+                <br />
+                <span v-html="page.text"></span>
             </v-flex>
         </v-layout>
     </v-container>
